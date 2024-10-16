@@ -3,55 +3,20 @@ body {
     font-family: Arial, sans-serif;
     background-color: #121212; /* Cor de fundo mais escura para um visual de streaming */
     color: #ffffff; /* Texto branco para contraste */
-    margin: 60;
-    padding: 60;
+    margin: 0;
+    padding: 20px;
 }
 
 /* Títulos */
 h2 {
     text-align: left;
-    margin: 50px 0;
+    margin: 50px 0 20px;
     font-size: 32px; /* Tamanho maior para destacar as categorias */
 }
 
-/* Formulário */
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 20px;
-}
-
-/* Campos de entrada */
-input {
-    padding: 10px;
-    margin: 10px 0;
-    width: 100%; /* Largura total do container */
-    max-width: 300px; /* Largura máxima */
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-/* Botões */
-button {
-    padding: 10px;
-    background-color: orange;
-    border: none;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px; /* Bordas arredondadas */
-    transition: background-color 0.3s, transform 0.2s; /* Transição suave */
-}
-
-    button:hover {
-        background-color: #ff6600;
-        transform: scale(1.05); /* Aumenta o botão ao passar o mouse */
-    }
-
 /* Estilos para categorias de filmes */
 .category {
-    margin: 20px 0;
+    margin: 40px 0;
 }
 
 /* Lista de filmes */
@@ -59,31 +24,144 @@ button {
     display: flex;
     overflow-x: auto; /* Permite rolagem horizontal */
     padding: 10px 0;
+    gap: 20px; /* Espaçamento entre os cartões */
 }
 
 /* Cartões de filmes */
 .movie-card {
     background: #333; /* Fundo escuro para os cartões */
-    border-radius: 8px;
-    margin-right: 10px;
-    padding: 10px;
+    border-radius: 10px;
+    padding: 20px;
     text-align: center;
-    transition: transform 0.2s; /* Transição suave para animações */
+    transition: transform 0.3s; /* Transição suave para animações */
+    width: 220px; /* Aumenta a largura do cartão */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Adiciona sombra para destaque */
 }
 
     .movie-card:hover {
-        transform: scale(1.05); /* Aumenta o tamanho no hover */
+        transform: scale(1.1); /* Aumenta o tamanho no hover */
     }
 
     /* Imagens dos filmes */
     .movie-card img {
-        width: 150px; /* Largura dos cartões */
-        height: auto;
-        border-radius: 5px; /* Bordas arredondadas para as imagens */
+        width: 100%; /* Largura total do cartão */
+        height: 330px; /* Altura ajustada para proporção de poster */
+        border-radius: 8px; /* Bordas arredondadas para as imagens */
+        object-fit: cover; /* Ajusta o corte das imagens */
     }
 
+    .movie-card p {
+        margin-top: 10px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+/* Estilos da navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #1c1c1c;
+    border-bottom: 2px solid orange;
+}
+
+.navbar-logo img {
+    width: 150px; /* Tamanho da logo */
+    height: auto;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+}
+
+    .navbar-links a {
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+        font-size: 16px;
+        transition: color 0.3s;
+    }
+
+        .navbar-links a:hover {
+            color: orange;
+        }
+
+.account-info {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #1c1c1c;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+    .account-info h3 {
+        margin-bottom: 10px;
+        font-size: 20px;
+    }
+
+    .account-info p {
+        font-size: 16px;
+        margin: 5px 0;
+    }
+
+.account-section {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #1c1c1c;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.account-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+    .form-group label {
+        margin-bottom: 5px;
+        font-size: 16px;
+    }
+
+    .form-group input {
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+    }
+
+.btn-update {
+    padding: 10px 20px;
+    background-color: orange;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+    .btn-update:hover {
+        background-color: #ff6600;
+    }
+
+.message {
+    margin-top: 20px;
+    font-size: 16px;
+    color: green; /* Para mensagem de sucesso */
+}
+
+
+
 /* Responsividade */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     /* Ajustes para telas menores */
     .movie-list {
         flex-direction: column; /* Coloca os cartões em coluna */
@@ -91,7 +169,6 @@ button {
     }
 
     .movie-card {
-        margin: 10px 0; /* Margem vertical em vez de horizontal */
         width: 80%; /* Largura total do container */
     }
 

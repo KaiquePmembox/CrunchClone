@@ -72,6 +72,52 @@
             ViewBag.Message = "Usuário ou senha inválidos!";
             return View();
         }
+
+        // POST: /Account/UpdateAccount
+        [HttpPost]
+        public IActionResult UpdateAccount(string name, string newPassword, string confirmPassword)
+        {
+            if (newPassword != confirmPassword)
+            {
+                ViewBag.Message = "As senhas não coincidem!";
+                return View("MinhaConta");
+            }
+
+            using (var conn = new MySqlConnection(_connectionString))
+            {
+                conn.Open();
+
+                string username = User.Identity.Name; // Obtém o nome do usuário autenticado
+
+                // Verifica se há uma nova senha e faz o hash
+                string hashedPassword = null;
+                if (!string.IsNullOrEmpty(newPassword))
+                {
+                    hashedPassword = AuthService.HashPassword(newPassword);
+                }
+
+                // Atualiza o nome e a senha, se necessário
+                var query = "UPDATE Users SET Username = @Username";
+                if (!string.IsNullOrEmpty(hashedPassword))
+                {
+                    query += ", PasswordHash = @PasswordHash";
+                }
+                query += " WHERE Username = @OldUsername";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@Username", name);
+                if (!string.IsNullOrEmpty(hashedPassword))
+                {
+                    cmd.Parameters.AddWithValue("@PasswordHash", hashedPassword);
+                }
+                cmd.Parameters.AddWithValue("@OldUsername", username);
+                cmd.ExecuteNonQuery();
+            }
+
+            ViewBag.Message = "Conta atualizada com sucesso!";
+            return View("MinhaConta");
+        }
+
     }
 
 }
