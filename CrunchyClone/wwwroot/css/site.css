@@ -36,6 +36,7 @@ h2 {
     transition: transform 0.3s; /* Transição suave para animações */
     width: 220px; /* Aumenta a largura do cartão */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Adiciona sombra para destaque */
+ 
 }
 
     .movie-card:hover {
