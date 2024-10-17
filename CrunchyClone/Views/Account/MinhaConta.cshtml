@@ -1,4 +1,36 @@
-﻿@page
-@model MinhaContaModel
-@{
+﻿@{
+    ViewData["Title"] = "Minha Conta";
 }
+
+<link rel="stylesheet" href="~/css/site.css" />
+
+
+<div class="account-container">
+    <h2>Minha Conta</h2>
+
+    @if (ViewBag.Message != null)
+    {
+        <div class="alert alert-success">@ViewBag.Message</div>
+    }
+
+    <div class="account-info">
+        <p><strong>Nome de usuário:</strong> @ViewBag.Username</p>
+        <p><strong>Email:</strong> @ViewBag.Email</p>
+    </div>
+
+    <form method="post" asp-action="UpdateAccount" class="account-form">
+        <div class="form-group">
+            <label for="newName">Novo Nome de Usuário:</label>
+            <input type="text" class="form-control" id="newName" name="newName" required />
+        </div>
+        <div class="form-group">
+            <label for="newPassword">Nova Senha:</label>
+            <input type="password" class="form-control" id="newPassword" name="newPassword" />
+        </div>
+        <div class="form-group">
+            <label for="confirmPassword">Confirmar Nova Senha:</label>
+            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" />
+        </div>
+        <button type="submit" class="auth-button">Atualizar</button>
+    </form>
+</div>
