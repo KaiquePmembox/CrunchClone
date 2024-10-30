@@ -1,8 +1,8 @@
 /* Estilos gerais */
 body {
     font-family: Arial, sans-serif;
-    background-color: #121212; /* Cor de fundo mais escura para um visual de streaming */
-    color: #ffffff; /* Texto branco para contraste */
+    background-color: #121212;
+    color: #ffffff;
     margin: 0;
     padding: 20px;
 }
@@ -11,7 +11,7 @@ body {
 h2 {
     text-align: left;
     margin: 50px 0 20px;
-    font-size: 32px; /* Tamanho maior para destacar as categorias */
+    font-size: 24px; /* Reduzido para ajustar a escala */
 }
 
 /* Estilos para categorias de filmes */
@@ -22,49 +22,46 @@ h2 {
 /* Lista de filmes */
 .movie-list {
     display: flex;
-    overflow-x: auto; /* Permite rolagem horizontal */
+    overflow-x: auto;
     padding: 10px 0;
-    gap: 20px; /* Espaçamento entre os cartões */
+    gap: 10px; /* Reduzido para ajustar a escala */
+    flex-wrap: nowrap;
+    justify-content: center;
 }
-
-
-
-
 
 /* Cartões de filmes */
 .movie-card {
-    background: #333; /* Fundo escuro para os cartões */
+    background: #333;
     border-radius: 10px;
-    padding: 20px;
+    padding: 10px; /* Reduzido para ajustar a escala */
     text-align: center;
-    transition: transform 0.3s; /* Transição suave para animações */
-    width: 220px; /* Aumenta a largura do cartão */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Adiciona sombra para destaque */
- 
+    transition: transform 0.3s;
+    width: 110px; /* Reduzido para ajustar a escala */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
     .movie-card:hover {
-        transform: scale(1.1); /* Aumenta o tamanho no hover */
+        transform: scale(1.1);
     }
 
     /* Imagens dos filmes */
     .movie-card img {
-        width: 100%; /* Largura total do cartão */
-        height: 330px; /* Altura ajustada para proporção de poster */
-        border-radius: 8px; /* Bordas arredondadas para as imagens */
-        object-fit: cover; /* Ajusta o corte das imagens */
+        width: 100%;
+        height: 165px; /* Reduzido para ajustar a escala */
+        border-radius: 8px;
+        object-fit: cover;
     }
 
     .movie-card p {
         margin-top: 10px;
-        font-size: 18px;
+        font-size: 14px; /* Reduzido para ajustar a escala */
         font-weight: bold;
         line-height: 1.6;
         color: #333;
         background: linear-gradient(90deg, #f3ec78, #af4261);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        padding: 10px;
+        padding: 5px; /* Reduzido para ajustar a escala */
         border-radius: 5px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease, background 0.3s ease;
@@ -77,20 +74,19 @@ h2 {
             -webkit-text-fill-color: transparent;
         }
 
-
 /* Estilos da navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 10px; /* Reduzido para ajustar a escala */
     background-color: #1c1c1c;
     border-bottom: 2px solid orange;
     border-radius: 10px;
 }
 
 .navbar-logo img {
-    width: 150px; /* Tamanho da logo */
+    width: 75px; /* Reduzido para ajustar a escala */
     height: auto;
 }
 
@@ -102,8 +98,8 @@ h2 {
     .navbar-links a {
         color: white;
         text-decoration: none;
-        margin-left: 20px;
-        font-size: 16px;
+        margin-left: 10px; /* Reduzido para ajustar a escala */
+        font-size: 12px; /* Reduzido para ajustar a escala */
         transition: color 0.3s;
     }
 
@@ -113,28 +109,28 @@ h2 {
 
 /* Informações de conta */
 .account-info {
-    margin-bottom: 30px;
-    padding: 20px;
+    margin-bottom: 15px; /* Reduzido para ajustar a escala */
+    padding: 10px; /* Reduzido para ajustar a escala */
     background-color: #1c1c1c;
     border-radius: 8px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
     .account-info h3 {
-        margin-bottom: 10px;
-        font-size: 20px;
+        margin-bottom: 5px; /* Reduzido para ajustar a escala */
+        font-size: 16px; /* Reduzido para ajustar a escala */
     }
 
     .account-info p {
-        font-size: 16px;
+        font-size: 12px; /* Reduzido para ajustar a escala */
         margin: 5px 0;
     }
 
 /* Formulários de autenticação */
 .auth-container {
-    max-width: 800px; /* Aumenta o tamanho máximo do bloco para 800px */
-    margin: 80px auto; /* Centraliza o bloco verticalmente */
-    padding: 40px;
+    max-width: 400px; /* Reduzido para ajustar a escala */
+    margin: 40px auto; /* Reduzido para ajustar a escala */
+    padding: 20px; /* Reduzido para ajustar a escala */
     background-color: #1f1f1f;
     border-radius: 10px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
@@ -142,10 +138,10 @@ h2 {
 }
 
     .auth-container h2 {
-        margin-bottom: 20px;
-        font-size: 24px;
+        margin-bottom: 10px; /* Reduzido para ajustar a escala */
+        font-size: 18px; /* Reduzido para ajustar a escala */
         color: #ffffff;
-        text-align:center;
+        text-align: center;
     }
 
 .auth-form {
@@ -154,30 +150,30 @@ h2 {
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 10px; /* Reduzido para ajustar a escala */
     text-align: left;
 }
 
     .form-group label {
         display: block;
         margin-bottom: 5px;
-        font-size: 14px;
+        font-size: 12px; /* Reduzido para ajustar a escala */
     }
 
     .form-group input {
-        width: 100%; /* Ocupa toda a largura do bloco */
-        padding: 15px; /* Aumenta o padding para melhor visualização */
+        width: 100%;
+        padding: 10px; /* Reduzido para ajustar a escala */
         border: none;
         border-radius: 5px;
-        font-size: 16px; /* Aumenta o tamanho do texto */
+        font-size: 12px; /* Reduzido para ajustar a escala */
     }
 
 /* Botão de autenticação */
 .auth-button {
-    padding: 10px;
+    padding: 5px; /* Reduzido para ajustar a escala */
     background-color: orange;
     color: #ffffff;
-    font-size: 16px;
+    font-size: 12px; /* Reduzido para ajustar a escala */
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -191,14 +187,14 @@ h2 {
 /* Mensagem de erro */
 .error-message {
     color: #ff4444;
-    margin-top: 20px;
+    margin-top: 10px; /* Reduzido para ajustar a escala */
 }
 
 /* Seção da conta */
 .account-section {
-    max-width: 600px;
+    max-width: 300px; /* Reduzido para ajustar a escala */
     margin: 0 auto;
-    padding: 40px;
+    padding: 20px; /* Reduzido para ajustar a escala */
     background-color: #1c1c1c;
     border-radius: 8px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
@@ -207,11 +203,11 @@ h2 {
 .account-form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px; /* Reduzido para ajustar a escala */
 }
 
 .btn-update {
-    padding: 10px 20px;
+    padding: 5px 10px; /* Reduzido para ajustar a escala */
     background-color: orange;
     color: white;
     border: none;
@@ -225,91 +221,71 @@ h2 {
     }
 
 .message {
-    margin-top: 20px;
-    font-size: 16px;
-    color: green; /* Para mensagem de sucesso */
+    margin-top: 10px; /* Reduzido para ajustar a escala */
+    font-size: 12px; /* Reduzido para ajustar a escala */
+    color: green;
 }
 
 .account-container {
-    max-width: 800px; /* Largura máxima da seção */
-    margin: 80px auto; /* Centraliza verticalmente */
-    padding: 40px; /* Espaçamento interno */
-    background-color: #1f1f1f; /* Fundo escuro */
-    border-radius: 10px; /* Bordas arredondadas */
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5); /* Sombra para destaque */
-    color: #ffffff; /* Texto branco */
-    text-align: center; /* Centraliza texto */
+    max-width: 400px; /* Reduzido para ajustar a escala */
+    margin: 40px auto; /* Reduzido para ajustar a escala */
+    padding: 20px; /* Reduzido para ajustar a escala */
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    text-align: center;
 }
 
-    /* Títulos */
     .account-container h2 {
-        margin-bottom: 20px; /* Espaçamento abaixo do título */
-        font-size: 24px; /* Tamanho do texto do título */
+        margin-bottom: 10px; /* Reduzido para ajustar a escala */
+        font-size: 18px; /* Reduzido para ajustar a escala */
     }
 
 /* Informações da conta */
 .account-info {
-    margin-bottom: 20px; /* Espaçamento abaixo da seção de informações */
-    text-align: left; /* Alinha o texto à esquerda */
+    margin-bottom: 10px; /* Reduzido para ajustar a escala */
+    text-align: left;
 }
 
 /* Estilos dos formulários */
 .account-form {
-    display: flex; /* Exibe como flexbox */
-    flex-direction: column; /* Direção vertical */
-    gap: 20px; /* Espaçamento entre os campos */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Reduzido para ajustar a escala */
 }
 
 /* Estilos dos inputs */
 .form-group input {
-    width: 100%; /* Ocupa toda a largura do bloco */
-    padding: 10px; /* Espaçamento interno */
-    border: none; /* Remove borda padrão */
-    border-radius: 5px; /* Bordas arredondadas */
-    font-size: 16px; /* Tamanho do texto */
+    width: 100%;
+    padding: 5px; /* Reduzido para ajustar a escala */
+    border: none;
+    border-radius: 5px;
+    font-size: 12px; /* Reduzido para ajustar a escala */
 }
 
 /* Botão de atualização */
 .auth-button {
-    padding: 15px; /* Aumenta o padding do botão */
-    background-color: orange; /* Cor de fundo do botão */
-    color: #ffffff; /* Cor do texto do botão */
-    font-size: 16px; /* Tamanho do texto do botão */
-    border: none; /* Remove borda padrão */
-    border-radius: 5px; /* Bordas arredondadas */
-    cursor: pointer; /* Muda o cursor para indicar que é clicável */
-    transition: background-color 0.3s; /* Transição suave para mudança de cor */
+    padding: 7px; /* Reduzido para ajustar a escala */
+    background-color: orange;
+    color: #ffffff;
+    font-size: 12px; /* Reduzido para ajustar a escala */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
     .auth-button:hover {
-        background-color: #ff8c00; /* Cor ao passar o mouse */
+        background-color: #ff8c00;
     }
 
 /* Mensagem de sucesso */
 .alert {
-    margin-bottom: 20px; /* Espaçamento abaixo da mensagem */
+    margin-bottom: 10px; /* Reduzido para ajustar a escala */
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .movie-list {
-        flex-direction: column; /* Coloca os cartões em coluna */
-        align-items: center; /* Centraliza os cartões */
-    }
-
-    .movie-card {
-        width: 80%; /* Largura total do container */
-    }
-
-    input {
-        width: 90%; /* Aumenta a largura em telas menores */
-    }
-
-    .auth-container {
-        width: 90%;
-    }
-}
-
+/* Configurações gerais para o pop-up */
 .popup-overlay {
     display: none;
     position: fixed;
@@ -321,21 +297,23 @@ h2 {
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    flex-direction: column;
 }
 
 .popup-content {
     background-color: #121212;
-    padding: 20px;
+    padding: 10px; /* Reduzido para ajustar a escala */
     border-radius: 10px;
-    max-width: 900px;
-    height: 900px;
-    width: 100%;
+    max-width: auto;
+    width: 90%;
+    height: auto;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    overflow-y: auto;
 }
 
 .popup-close {
@@ -345,26 +323,53 @@ h2 {
     background: none;
     border: none;
     font-size: 1.5rem;
+    color: #ffffff;
     cursor: pointer;
 }
 
 #popup-banner {
     width: 100%;
+    max-width: 400px; /* Reduzido para ajustar a escala */
     border-radius: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px; /* Reduzido para ajustar a escala */
 }
 
 #popup-synopsis {
-    margin-bottom: 20px;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 10px; /* Reduzido para ajustar a escala */
 }
 
+/* Ajuste de responsividade para o trailer */
 #popup-trailer {
-    width: 100%;
-    height: 500px;
+    width: auto;
+    height: auto;
+    max-width: auto;
+    aspect-ratio: 16 / 9;
     border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
 }
 
 /* Estilos de responsividade */
+/* Ajustes para telas médias e grandes */
+@media (max-width: 1024px) {
+    .movie-card {
+        width: 22.5%; /* Ajustado para manter a proporção */
+    }
+
+    input {
+        width: 70%;
+    }
+
+    .auth-container {
+        width: 60%;
+    }
+}
+
+/* Ajustes para tablets e celulares */
 @media (max-width: 768px) {
     .movie-list {
         flex-direction: column;
@@ -372,7 +377,7 @@ h2 {
     }
 
     .movie-card {
-        width: 80%;
+        width: 40%; /* Ajustado para manter a proporção */
     }
 
     input {
@@ -383,7 +388,44 @@ h2 {
         width: 90%;
     }
 
-    .popup {
-        width: 90%;
+    /* Responsividade para o pop-up */
+    .popup-content {
+        width: 95%;
+    }
+
+    #popup-trailer {
+        width: 100%;
+        max-width: none;
+        height: 125px; /* Reduzido para ajustar a escala */
+    }
+}
+
+.responsive-iframe {
+    width: 100%;
+    height: 100%;
+    min-width: 560px; /* Largura mínima para Full HD */
+    min-height: 315px; /* Altura mínima para Full HD */
+    max-width: 100%;
+    max-height: 100%;
+    aspect-ratio: 16/9; /* Mantém a proporção 16:9 */
+}
+
+/* Ajustes para celulares */
+@media (max-width: 480px) {
+    .movie-card {
+        width: 50%; /* Ajustado para manter a proporção */
+        margin-bottom: 7.5px; /* Reduzido para ajustar a escala */
+    }
+
+    input {
+        width: 95%;
+    }
+
+    .auth-container {
+        width: 95%;
+    }
+
+    #popup-trailer {
+        height: 100px; /* Reduzido para ajustar a escala */
     }
 }

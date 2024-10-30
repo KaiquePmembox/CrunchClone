@@ -11,6 +11,43 @@
     <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="~/css/site.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Função para alternar entre categorias
+        function showCategory(category) {
+            document.querySelectorAll('.category').forEach(function (section) {
+                section.classList.remove('active-category');
+            });
+            document.getElementById(category).classList.add('active-category');
+        }
+    </script>
+    <script>
+        // Função para abrir o pop-up
+        function openPopup(title, bannerUrl, synopsis, trailerUrl) {
+            document.getElementById('popup-banner').src = bannerUrl;
+            document.getElementById('popup-synopsis').textContent = synopsis;
+
+            // Insere o iframe com a classe responsiva
+            document.getElementById('popup-trailer').innerHTML = `
+                        <iframe class="responsive-iframe" src="${trailerUrl}"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+                                gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                        </iframe>
+                    `;
+
+            document.getElementById('popup-overlay').style.display = 'flex';
+        }
+
+        // Função para fechar o pop-up
+        function closePopup() {
+            document.getElementById('popup-overlay').style.display = 'none';
+
+            // Remove o iframe ao fechar o pop-up para interromper o vídeo
+            document.getElementById('popup-trailer').innerHTML = '';
+        }
+    </script>
+
 </head>
 <body>
     <header>
@@ -33,12 +70,10 @@
             <h2>Ação</h2>
            
             <div class="movie-list">
-                <div class="movie-card" onclick="openPopup('John Wick', 'https://m.media-amazon.com/images/I/81TWBtwK75L._AC_SY679_.jpg', 'John Wick é um lendário assassino de aluguel aposentado, lidando com o luto após perder o grande amor de sua vida. Quando um gângster invade sua casa, mata seu cachorro e rouba seu carro, ele é forçado a voltar à ativa e inicia sua vingança.', 'https://www.youtube.com/embed/2AUmvWm5ZDQ')">
-
-    <img src="/img/madmax.jpg" alt="Mad Max: Fury Road" />
-    <p>Mad Max: Estrada da Fúria</p>
-</div>
-
+                <div class="movie-card" onclick="openPopup('John Wick', 'https://m.media-amazon.com/images/I/81TWBtwK75L._AC_SY679_.jpg', 'John Wick é um lendário assassino de aluguel aposentado, lidando com o luto após perder o grande amor de sua vida. Quando um gângster invade sua casa, mata seu cachorro e rouba seu carro, ele é forçado a voltar à ativa e inicia sua vingança.', 'https://www.youtube.com/embed/slnaRB9_I-k?si=OjZT8a8P2Z8MdB6b')">
+                    <img src="/img/madmax.jpg" alt="Mad Max: Fury Road" />
+                    <p>Mad Max: Estrada da Fúria</p>
+                </div>
 
                 <div class="movie-card" onclick="openPopup('John Wick', 'https://m.media-amazon.com/images/I/81TWBtwK75L._AC_SY679_.jpg', 'John Wick é um lendário assassino de aluguel aposentado, lidando com o luto após perder o grande amor de sua vida. Quando um gângster invade sua casa, mata seu cachorro e rouba seu carro, ele é forçado a voltar à ativa e inicia sua vingança.', 'https://www.youtube.com/embed/2AUmvWm5ZDQ')">
                     <img src="~/img/john.jpg" alt="John Wick" />
@@ -263,12 +298,13 @@
             </div>
         </section>
 
-        <div class="popup-overlay" id="popup-overlay">
+        <!-- Pop-up overlay para exibir informações do filme -->
+        <div id="popup-overlay" class="popup-overlay">
             <div class="popup-content">
-                <button class="popup-close" onclick="closePopup()">×</button>
-                <img id="popup-banner" src="" alt="Banner do Filme" />
+                <button onclick="closePopup()" class="popup-close">X</button>
+                <img id="popup-banner" src="" alt="Banner">
                 <p id="popup-synopsis"></p>
-                <iframe id="popup-trailer" src="" frameborder="0" allowfullscreen></iframe>
+                <div id="popup-trailer"></div> <!-- O iframe será inserido aqui -->
             </div>
         </div>
 
@@ -277,30 +313,5 @@
     <footer>
         <p>&copy; 2024 Streaming Service</p>
     </footer>
-
-    <script>
-        // Função para alternar entre categorias
-        function showCategory(category) {
-            document.querySelectorAll('.category').forEach(function(section) {
-                section.classList.remove('active-category');
-            });
-            document.getElementById(category).classList.add('active-category');
-        }
-    </script>
-    <script>
-        // Função para abrir o pop-up
-        function openPopup(title, bannerUrl, synopsis, trailerUrl) {
-            document.getElementById('popup-banner').src = bannerUrl;
-            document.getElementById('popup-synopsis').textContent = synopsis;
-            document.getElementById('popup-trailer').src = trailerUrl;
-            document.getElementById('popup-overlay').style.display = 'flex';
-        }
-
-        // Função para fechar o pop-up
-        function closePopup() {
-            document.getElementById('popup-overlay').style.display = 'none';
-            document.getElementById('popup-trailer').src = ''; // Limpa o trailer para parar a reprodução
-        }
-    </script>
 </body>
 </html>
