@@ -48,6 +48,28 @@
         }
     </script>
 
+    <script>
+        function toggleDropdown(event) {
+            event.stopPropagation();
+            var dropdownContent = document.getElementById("dropdown-content");
+            if (dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
+            } else {
+                dropdownContent.style.display = "block";
+            }
+        }
+
+        // Fecha o dropdown se o usuário clicar fora dele
+        window.onclick = function (event) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.style.display === "block") {
+                    openDropdown.style.display = "none";
+                }
+            }
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -59,7 +81,17 @@
                 </a>
             </div>
             <div class="navbar-links">
-                <a href="/Account/MinhaConta">Minha Conta</a>
+                <div class="dropdown">
+                    <button class="dropbtn" onclick="toggleDropdown(event)">
+                        <img src="/img/user.png" alt="User Icon" class="user-icon" width="30" height="30" />
+                    </button>
+                    <div id="dropdown-content" class="dropdown-content">
+                        <ul>
+                            <li><a href="/Account/MinhaConta">Minha Conta</a></li>
+                            <li><a href="/Account/login">Sair</a></li></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </nav>
     </header>
@@ -92,8 +124,8 @@
                     <p>Velozes e Furiosos 7</p>
                 </div>
                 <div class="movie-card" onclick="openPopup('John Wick', 'https://m.media-amazon.com/images/I/81TWBtwK75L._AC_SY679_.jpg', 'John Wick é um lendário assassino de aluguel aposentado, lidando com o luto após perder o grande amor de sua vida. Quando um gângster invade sua casa, mata seu cachorro e rouba seu carro, ele é forçado a voltar à ativa e inicia sua vingança.', 'https://www.youtube.com/embed/2AUmvWm5ZDQ')">
-                    <img src="~/img/infiltrados.jpg" alt="Os Infiltrados" />
-                    <p>Os Infiltrados</p>
+                    <img src="~/img/pi.jpg" alt="Os Infiltrados" />
+                    <p>As aventuras de Pi</p>
                 </div>
                 <div class="movie-card" onclick="openPopup('John Wick', 'https://m.media-amazon.com/images/I/81TWBtwK75L._AC_SY679_.jpg', 'John Wick é um lendário assassino de aluguel aposentado, lidando com o luto após perder o grande amor de sua vida. Quando um gângster invade sua casa, mata seu cachorro e rouba seu carro, ele é forçado a voltar à ativa e inicia sua vingança.', 'https://www.youtube.com/embed/2AUmvWm5ZDQ')">
                     <img src="~/img/matrix.jpg" alt="Matrix" />

@@ -1,6 +1,9 @@
 ﻿using CrunchyClone.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
 
 namespace CrunchyClone.Controllers
 {
@@ -13,6 +16,7 @@ namespace CrunchyClone.Controllers
             _logger = logger;
         }
 
+        [Authorize] // Garante que apenas usuários autenticados possam acessar a página inicial
         public IActionResult Index()
         {
             return View();
@@ -27,6 +31,14 @@ namespace CrunchyClone.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        [HttpPost]
+        [Authorize]
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Login", "Account");
         }
     }
 }

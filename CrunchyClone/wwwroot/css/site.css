@@ -172,7 +172,7 @@ h2 {
 .auth-button {
     padding: 5px; /* Reduzido para ajustar a escala */
     background-color: orange;
-    color: #ffffff;
+    color: #000000;
     font-size: 12px; /* Reduzido para ajustar a escala */
     border: none;
     border-radius: 5px;
@@ -268,7 +268,7 @@ h2 {
 .auth-button {
     padding: 7px; /* Reduzido para ajustar a escala */
     background-color: orange;
-    color: #ffffff;
+    color: #000000;
     font-size: 12px; /* Reduzido para ajustar a escala */
     border: none;
     border-radius: 5px;
@@ -427,5 +427,73 @@ h2 {
 
     #popup-trailer {
         height: 100px; /* Reduzido para ajustar a escala */
+    }
+
+    .logout-button {
+        background: none;
+        border: none;
+        color: #007bff;
+        cursor: pointer;
+        text-decoration: underline;
+        padding: 0;
+        font: inherit;
+    }
+
+    .logout-button:hover {
+            color: #0056b3;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navbar-logo img {
+        height: 50px;
+    }
+
+    .navbar-links {
+        position: relative;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropbtn {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .user-icon {
+        height: 30px;
+        width: 30px;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: white;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a, .dropdown-content form {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover, .dropdown-content form:hover {
+        background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
     }
 }

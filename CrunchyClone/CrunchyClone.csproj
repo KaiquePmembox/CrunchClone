@@ -39,7 +39,6 @@
   <ItemGroup>
     <Folder Include="Assets\" />
     <Folder Include="Views\MinhaConta\" />
-    <Folder Include="wwwroot\img\" />
   </ItemGroup>
 
 </Project>
